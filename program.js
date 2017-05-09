@@ -9,13 +9,13 @@ process.stdin.on('readable', function() {
 	    	case '/exit':
 	    		process.stdout.write('Quitting app!\n');
 	            process.exit();
-	        break;
+	       		break;
 	        case 'LANG':
 	        	 console.log(process.env.LANG);
-			break;
+				break;
 			case 'version':
 				console.log(process.versions.node);
-			break;
+				break;
 	        default:    
 	        	process.stderr.write('Wrong instruction! ');   
 
