@@ -11,7 +11,7 @@ process.stdin.on('readable', function() {
 	    	case 'LANG':
 	        	console.log(process.env.LANG);
 				break;
-			case 'version':
+		    case 'version':
 				console.log(process.versions.node);
 				break;
 	    	default:    
