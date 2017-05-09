@@ -5,18 +5,17 @@ process.stdin.on('readable', function() {
     	var instruction = input.toString().trim();
 		switch(instruction) {
 	    	case '/exit':
-	    		process.stdout.write('Quitting app!\n');
-	        	process.exit();
-	       		break;
-	    	case 'LANG':
-	        	console.log(process.env.LANG);
+				process.stdout.write('Quitting app!\n');
+				process.exit();
 				break;
-		    case 'version':
+	    	case 'LANG':
+	    		console.log(process.env.LANG);
+				break;
+			case 'version':
 				console.log(process.versions.node);
 				break;
 	    	default:    
 	    	process.stderr.write('Wrong instruction! ');   
-
 		} 
 	}
 });
