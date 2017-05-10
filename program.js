@@ -8,14 +8,19 @@ process.stdin.on('readable', function() {
 				process.stdout.write('Quitting app!\n');
 				process.exit();
 				break;
-			case 'LANG':
+			case '/LANG':
 				console.log(process.env.LANG);
 				break;
-			case 'version':
+			case '/version':
 				console.log(process.versions.node);
 				break;
+			case '/getOSinfo':
+				var OSinfo = require('./OSInfo');
+				OSinfo.print();
+				break;
 			default:    
-				process.stderr.write('Wrong instruction! ');   
+				process.stderr.write('Wrong instruction!\n ');   
 		} 
 	}
 });
+
