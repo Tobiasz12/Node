@@ -1,6 +1,7 @@
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function() {
-	var input = process.stdin.read();   
+	var input = process.stdin.read(); 
+	var OSinfo = require('./OSInfo');  
 	if (input !== null) {
 		var instruction = input.toString().trim();
 		switch(instruction) {
@@ -15,7 +16,6 @@ process.stdin.on('readable', function() {
 				console.log(process.versions.node);
 				break;
 			case '/getOSinfo':
-				var OSinfo = require('./OSInfo');
 				OSinfo.print();
 				break;
 			default:    
