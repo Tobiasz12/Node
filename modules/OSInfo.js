@@ -5,6 +5,7 @@ var release = os.release();
 var cpu = os.cpus()[0].model;
 var timeFormat = require('./timeFormat');
 var type = os.type();
+
 function getOSinfo(){	
 	if(type === 'Darwin') {
 	    type = 'OSX';
