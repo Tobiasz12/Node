@@ -1,19 +1,18 @@
 var os = require('os');
-
-function getOSinfo(){
-	var type = os.type();
-	
+var uptime = os.uptime();
+var userInfo = os.userInfo();
+var release = os.release();
+var cpu = os.cpus()[0].model;
+var timeFormat = require('./timeFormat');
+var type = os.type();
+function getOSinfo(){	
 	if(type === 'Darwin') {
 	    type = 'OSX';
 	} else if(type === 'Windows_NT') {
 	    type = 'Windows';
 	}
 
-	var userInfo = os.userInfo();
-	var release = os.release();
-	var cpu = os.cpus()[0].model;
-	var timeFormat = require('./modules/timeFormat');
-	timeFormat.print();
+	timeFormat.print(uptime);
 	console.log('System:', type);
 	console.log('Release:', release);
 	console.log('CPU model:', cpu);

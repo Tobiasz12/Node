@@ -1,6 +1,4 @@
-var os = require('os');
-var timeFormat = function (uptime) {
-	var uptime = os.uptime();
+var timeFormat = function (uptime) {	
    	hours = Math.floor(uptime / 3600);
 	uptime %= 3600;
 	minutes = Math.floor(uptime / 60);
